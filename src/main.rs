@@ -1,6 +1,7 @@
 use bevy::{prelude::*};
 use bevy_flycam::MovementSettings;
 use bevy_flycam::PlayerPlugin;
+mod grid;
 
 fn main() {
     App::new()
@@ -12,6 +13,7 @@ fn main() {
             speed: 32.0,          // default: 12.0
         })
         .add_startup_system(setup_scene)
+        .add_startup_system(grid::init_grid)
         .run();
 }
 
