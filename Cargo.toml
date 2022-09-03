@@ -3,8 +3,8 @@ name = "bevy_flowfield"
 description = "Flowfield pathfinding using Bevy ECS"
 version = "0.1.0"
 authors = ["Julio Labarca"]
-homepage = "https://github.com/Jlabarca/bevy-flowfield"
-repository = "https://github.com/Jlabarca/bevy-flowfield"
+homepage = "https://github.com/jlabarca/bevy-flowfield"
+repository = "https://github.com/jlabarca/bevy-flowfield"
 license-file = "LICENSE"
 edition = "2021"
 
@@ -16,8 +16,9 @@ opt-level = 3
 
 [dependencies]
 bevy = "0.8"
-#bevy = { version = "0.8", default-features = false, features=["bevy_core_pipeline", "bevy_render", "bevy_asset", "bevy_pbr"] }
-bevy_flycam = "*"
+bevy-inspector-egui = "0.12.0"
+rand = "0.8.5"
+bevy_flycam = "0.8.1"
+noise = "0.7"
+bevy_mod_raycast = "0.6.2"
 
-# [target.wasm32-unknown-unknown]
-# runner = "wasm-server-runner"
