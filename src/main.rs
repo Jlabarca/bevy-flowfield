@@ -4,16 +4,17 @@ use bevy_inspector_egui::WorldInspectorPlugin;
 
 mod movement;
 mod grid;
+mod raycast;
 
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
         .add_plugin(grid::GridPlugin)
+        .add_plugin(raycast::RaycastPlugin)
         //.add_plugin(PlayerPlugin)
         .add_plugin(WorldInspectorPlugin::new())
         .add_startup_system(setup)
-            .add_system(move_units)
-            .run();
+        .run();
 }
 
 /// set up a simple 3D scene
@@ -37,8 +38,4 @@ fn setup(
         transform: Transform::from_xyz(3.0, 8.0, 5.0).with_rotation(Quat::from_euler(EulerRot::XYZ, 0.5, -2.6, 1.0)),
         ..default()
     });
-}
-
-fn move_units() {
-
 }
